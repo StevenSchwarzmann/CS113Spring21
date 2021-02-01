@@ -1,0 +1,31 @@
+package Calculations;
+
+import static org.junit.jupiter.api.Assertions.*;
+
+import org.junit.jupiter.api.AfterAll;
+import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
+
+class PowerOf2JUnitTest {
+	@Test
+	void test() {
+		Calculation calc = new Calculation();
+		
+		boolean output1 = calc.isPowerOf2(256);
+		assertEquals(true, output1);
+		
+		boolean output2 = calc.isPowerOf2(16);
+		assertEquals(true, output2);
+		
+		boolean output3 = calc.isPowerOf2(10);
+		assertEquals(false, output3);
+		
+		boolean output4 = calc.isPowerOf2(20);
+		assertEquals(false, output4);
+		
+		
+	}
+
+}

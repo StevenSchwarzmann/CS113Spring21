@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?><testrun name="PowerOf2JUnitTest" project="PowerOf2" tests="1" started="1" failures="0" errors="0" ignored="0">
+  <testsuite name="Calculations.PowerOf2JUnitTest" time="0.024" displayname="PowerOf2JUnitTest" uniqueid="[engine:junit-jupiter]/[class:Calculations.PowerOf2JUnitTest]">
+    <testcase name="test" classname="Calculations.PowerOf2JUnitTest" time="0.024" displayname="test()" uniqueid="[engine:junit-jupiter]/[class:Calculations.PowerOf2JUnitTest]/[method:test()]"/>
+  </testsuite>
+</testrun>
