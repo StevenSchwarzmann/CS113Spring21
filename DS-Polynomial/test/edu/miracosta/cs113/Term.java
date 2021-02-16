@@ -1,7 +1,5 @@
 package edu.miracosta.cs113;
 
-import java.util.Arrays;
-
 public class Term {
 	private final char VARIABLE_SYMBOL = 'x';
 	private final char MINUS_SYMBOL = '-';
@@ -15,6 +13,7 @@ public class Term {
 		this.exponent = 1;
 	}
 	
+	//Method comment
 	public Term(String term) {
 		if(!term.isEmpty()) {
 			if(term.contains(Character.toString(VARIABLE_SYMBOL))) {
