@@ -1,8 +1,5 @@
 ### Java template
 
-# Eclipse files
-.metadata/
-
 # Compiled class file
 *.class
 
