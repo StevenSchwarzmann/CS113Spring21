@@ -146,7 +146,7 @@ public class Term {
 	/**
 	 * Compares the exponents for terms
 	 * @param otherTerm Term you are comparing to
-	 * @return 0 = Same, -1 = parameter passed is lower exponent, 1 = parameter passed is higher exponent
+	 * @return 0 = Same, -1 = parameter passed is higher exponent, 1 = parameter passed is less than exponent
 	 */
 	public int compareTo(Term otherTerm) {
 		if(this.exponent == otherTerm.exponent) {

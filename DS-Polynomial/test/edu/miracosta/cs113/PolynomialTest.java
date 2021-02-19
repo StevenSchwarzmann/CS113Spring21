@@ -106,7 +106,6 @@ public class PolynomialTest {
                             new Term(-2, -1),
     };
 
-
     @Test
     public void testUniqueAddTermTypeBySizeOfList1() {
         Polynomial test = new Polynomial();
@@ -240,7 +239,7 @@ public class PolynomialTest {
             assertEquals("Expected and actual term DON'T match", expectedOrderedTerm, actualOrderedTerm);
         }
     }
-
+    
     @Test
     public void testClear() {
         Polynomial test = new Polynomial();
@@ -276,7 +275,7 @@ public class PolynomialTest {
             assertEquals("Expected and actual term DON'T match", expectedTerm, actualTerm);
         }
     }
-
+    
     @Test
     public void testCopyConstructor() {
         Polynomial original = new Polynomial(), copy;
