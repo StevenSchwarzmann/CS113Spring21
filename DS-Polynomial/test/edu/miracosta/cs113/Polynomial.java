@@ -1,6 +1,8 @@
 package edu.miracosta.cs113;
 
-import java.util.LinkedList;
+import java.util.Iterator; 
+import java.util.LinkedList; 
+import java.util.ListIterator; 
 
 public class Polynomial implements Cloneable {
 	LinkedList<Term> list = new LinkedList<Term>();
@@ -73,9 +75,21 @@ public class Polynomial implements Cloneable {
 		this.list = new LinkedList<Term>();
 	}
 	
-	@Override // Needs work
+	@Override
 	public String toString() {
-		return this.list.toString();
+		if(this.list.size() == 0) {
+			return "0";
+		}
+		 
+        String s = ""; 
+  
+        Iterator<Term> iterator = list.iterator(); 
+  
+        while (iterator.hasNext()) { 
+            s += iterator.next() + " "; 
+        } 
+        // Remove first + or - character
+        return s.substring(1);
 	}
 	
 	@Override
