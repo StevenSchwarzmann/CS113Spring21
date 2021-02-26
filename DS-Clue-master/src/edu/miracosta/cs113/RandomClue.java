@@ -50,7 +50,7 @@ public class RandomClue {
      */
     public static void main(String[] args) {
         // DECLARATION + INITIALIZATION
-        int answerSet, solution, murder, weapon, location;
+        int answerSet, solution, murder = 1, weapon = 1, location = 1;
         Theory answer;
         AssistantJack jack;
         Scanner keyboard = new Scanner(System.in);
@@ -63,13 +63,24 @@ public class RandomClue {
 
         // PROCESSING
         jack = new AssistantJack(answerSet);
+        
+      // Handle case 1
+        solution = jack.checkAnswer(weapon, location, murder);
 
-        do {
-            weapon = random.nextInt(6) + 1;
-            location = random.nextInt(10) + 1;
-            murder = random.nextInt(6) + 1;
+        while (solution != 0) { //Loop to max choice of 6, 10, 6 for a max of 20 attempts
+            switch (solution) {
+                case 1: // incorrect weapon
+                    weapon++;
+                    break;
+                case 2: // incorrect location
+                    location++;
+                    break;
+                case 3: // incorrect person
+                    murder++;
+                    break;
+            }
             solution = jack.checkAnswer(weapon, location, murder);
-        } while (solution != 0);
+        }
 
         answer = new Theory(weapon, location, murder);
 
