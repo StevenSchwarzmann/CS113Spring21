@@ -9,8 +9,7 @@ public class Term {
 	public int exponent;
 	
 	public Term() {
-		this.coefficient = 1;
-		this.exponent = 1;
+		this.setAll(1, 1);
 	}
 	
 	

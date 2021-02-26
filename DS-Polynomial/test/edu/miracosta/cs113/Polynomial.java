@@ -5,7 +5,7 @@ import java.util.LinkedList;
 import java.util.ListIterator; 
 
 public class Polynomial implements Cloneable {
-	LinkedList<Term> list = new LinkedList<Term>();
+	private LinkedList<Term> list = new LinkedList<Term>();
 
 	public Polynomial() {
 		
@@ -13,7 +13,7 @@ public class Polynomial implements Cloneable {
 	
 	public Polynomial(Polynomial p) {
         for(Term t: p.list) {
-            list.add(new Term(t)) ;
+            list.add(new Term(t));
         }
     }
 	
@@ -24,7 +24,7 @@ public class Polynomial implements Cloneable {
 	public void addTerm(Term term) {
 		if(this.list.size() > 0) {
 			for(int i = 0; i < this.list.size(); i++) {
-				// 0 = Same, -1 = parameter passed is lower exponent, 1 = parameter passed is higher exponent
+				// 0 = Same
 				var comparedValue = this.list.get(i).compareTo(term);
 				if(comparedValue == 0) {
 					// Call CLT method
@@ -35,9 +35,11 @@ public class Polynomial implements Cloneable {
 					}
 					break;
 				}
+				// -1 = parameter passed is lower exponent
 				else if(comparedValue == -1) {
 					this.list.add(i, term);
 					break;
+				//1 = parameter passed is higher exponent
 				} else if (comparedValue == 1){
 					// if size == i , add to end list
 					if(i == this.list.size() - 1) {
