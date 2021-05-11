@@ -4,6 +4,8 @@ import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.fail;
 
+import java.util.Stack;
+
 import org.junit.Test;
 
 /**
@@ -56,19 +58,25 @@ public class PalindromeTest {
         return isPalindromeRecursive(sanitizeString, 0, stringLength - 1);
     } // End of method isPalindrome
     
-    // Recursive palindrome method
+    
     private boolean isPalindromeRecursive(String str, int startIndex, int endIndex)
 	{
-		if (startIndex == endIndex)
-		return true;
-		
-		if ((str.charAt(startIndex)) != (str.charAt(endIndex)))
-		return false;
-		
-		if (startIndex < endIndex + 1)
-		return isPalindromeRecursive(str, startIndex + 1, endIndex - 1);
-		
-		return true;
+    	ArrayListStack arrStack = new ArrayListStack();
+
+        for (int i = 0; i < str.length(); i++) {
+        	arrStack.push(str.charAt(i));
+        }
+
+        String reverseStr = "";
+
+        while (!arrStack.empty()) {
+        	reverseStr = reverseStr+arrStack.pop();
+        }
+
+        if (str.equals(reverseStr))
+            return true;
+        else
+            return false;
 	}
 
     @Test
